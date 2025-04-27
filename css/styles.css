@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes floaty {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  body {
+    font-family: Arial, sans-serif; /* Sets a clean, standard font */
+    line-height: 1.6; /* Ensures readability with appropriate line spacing */
+    background-color: white; /* Sets a default background color */
+    color: #333; /* Sets a default text color for readability */
+    text-align: left; /* Ensures text is aligned to the left by default */
+    font-size: 16px; /* Sets a default font size */
+    min-height: 100vh; /* Makes sure body takes up at least the full viewport height */
+    display: flex; /* Enables flexbox layout (optional, depending on your layout needs) */
+    flex-direction: column; /* Keeps children stacked vertically in a column layout */
+    overflow-x: hidden; /* Prevents horizontal scrollbars from appearing */
+  }
+  
+  #navbar {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+     background-color: #ff4d4d; /* Deep red tone */
+    padding: 1.1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* optional shadow */
+  }
+  
+  #nav-list {
+    display: flex;
+    gap: 2.5rem;
+    margin-right: 2rem;
+    list-style: none;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color:#fff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  
+  .nav-link:hover {
+    background-color: #f0f0f0;
+    color: #007BFF;
+  }
+  
+  #welcome-section {
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background-color: #1a1a1a;
+      background-image: linear-gradient(62deg, #2e2e2e 0%, #1c1b1d 100%);
+        opacity: 0;
+        animation: fadeIn 1.2s ease-in-out forwards;    
+  }
+  
+  #welcome-section h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 0.1rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    animation: floaty 4s ease-in-out infinite;
+    text-align: center;
+    
+  }
+  
+  #welcome-section p {
+    font-size: 2.5rem;
+    color: #8da9c4;
+  }
+  
+  #projects {
+    text-align: center;
+    padding: 8.5rem 2rem;
+    background: linear-gradient(to bottom, #45567d, #43C6AC);
+  }
+  
+  .project-h2 {
+    text-align: center;
+    max-width: 640px;
+      margin: 0 auto 4rem auto;
+      font-size: 54px;
+      color: white;
+  } 
+  
+  .projects-grid {
+        display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+      gap: 1.2rem; /* spacing between items */
+  }
+  
+  .projects-grid a {
+      text-decoration: none;
+      color: white;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .project-title {
+    font-size: 1.1rem;
+    padding: 1rem;
+    font-weight: bold;
+    background-color: #2a2a2a;
+  }
+  
+  .projects-grid a:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+  }
+  
+  #contact-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 100%;
+    padding: 0 2rem;
+    background-color: #e0e0e0;
+  }
+  
+  .contact-header {
+    padding-bottom: 2rem;
+  }
+  
+  .contact-header h3 {
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  
+  .contact-header p {
+    font-size: 1.2rem;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  
+  .contact-links {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+  
+  .contact-links a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .contact-links a:hover {
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+  }
+  
+  .footer {
+     background-color: #ddd;
+     color: #222;
+     padding: 0.5rem 0.5rem;
+     text-align: center;
+     font-size: 0.95rem;
+     width: 100%;
+     margin: 0 auto;
+     
+  } 
+  /* 1. Phones (up to 600px) */
+  @media (max-width: 600px) {
+    #nav-list {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr; /* single column */
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+  
+    .project-title {
+      font-size: 1rem;
+      text-align: center;
+    }
+  
+    .contact-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .contact-header h3 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  
+    .contact-header p {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+  /* 2. Tablets (601px to 900px) */
+  @media (min-width: 601px) and (max-width: 900px) {
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+  }
+  
+  /* 3. Desktops (901px and up) */
+  @media (min-width: 901px) {
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 2rem;
+      padding: 0 3rem;
+    }
+  }
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
